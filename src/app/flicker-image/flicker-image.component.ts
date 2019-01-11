@@ -12,7 +12,6 @@ export class FlickerImageComponent implements OnInit {
 
   constructor(private httpServices: HttpServerServices) { }
   searchText = '';
-  searchFlag = false;
   showLoader = false;
   showErrorMessage = false;
   errorMessage = '';
@@ -56,11 +55,8 @@ export class FlickerImageComponent implements OnInit {
   	);
   } 
   onSearch(){
-    this.searchFlag = true;
-    if(this.searchFlag){
-      this.method = 'flickr.photos.search'
-      this.data = [];
-    }
+    this.method = 'flickr.photos.search'
+    this.data = [];
     this.getResults();
   }
   onScroll(event: any) {

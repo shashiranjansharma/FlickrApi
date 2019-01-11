@@ -22,6 +22,9 @@
       <div class="alert alert-danger" *ngIf="showErrorMessage">
         <strong>{{errorMessage}}</strong>
       </div>
+      <div class="alert alert-success" *ngIf="data.length == 0">
+        <strong>No results found.</strong>
+      </div>
     </div>
   </div>
-</div>
+</div> 

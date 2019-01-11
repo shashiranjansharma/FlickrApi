@@ -1,0 +1,18 @@
+.thumbnail{
+ border: 2px solid gray;
+ border-radius: 2%;
+ margin: 5px;
+}
+.body{
+    height: 660px;
+    overflow-y: auto;
+}
+.caption{
+    padding: 0 15px;
+}
+.loader{
+    text-align: center;
+}
+.alert{
+    margin: 50px 40px;
+}

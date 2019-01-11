@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-3" style="border: 1px solid gray">
+    <form class="form-group" (submit)="onSearch()">
+      <label for="search-txt">Search Image</label>
+      <input class="form-control" name="searchText" type="text" placeholder="Search image here..." [(ngModel)]="searchText" required>
+      <button class="btn-primary" type="submit" style="margin: 5px 0; float:right;">Search</button>
+    </form>
+  </div>
+  <div class="col-md-9 body" (scroll)="onScroll($event)">
+    <div class="row img-row">
+      <div class="col-md-4" style="border: 1px solid gray" *ngFor="let obj of data; let i = index">
+        <div class="thumbnail">
+          <div class="caption">
+            <h5>{{i+1+". "+obj.title}}</h5>
+          </div>
+          <img [src]="'https://farm'+obj.farm+'.staticflickr.com/'+obj.server+'/'+obj.id+'_'+obj.secret+'.jpg'" style="width:100%">
+        </div>
+      </div>
+      <div class="col-md-12 loader" *ngIf="showLoader">
+        <img src="../../assets/flikr-loader.gif" alt="Loader">
+      </div>
+      <div class="alert alert-danger" *ngIf="showErrorMessage">
+        <strong>{{errorMessage}}</strong>
+      </div>
+    </div>
+  </div>
+</div>
